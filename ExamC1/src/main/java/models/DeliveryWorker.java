@@ -1,38 +1,49 @@
 package models;
 
-import java.util.Objects;
-
 public class DeliveryWorker extends Worker {
-    private String deliveryArea; // Zone it's the same
-
-    // Constructors
-    public DeliveryWorker() {
-        super(); // This call the parent class constructor
-    }
+    private String deliveryArea;
+    private float economicIncentive; // Incentivo adicional específico para los repartidores
 
     public DeliveryWorker(String id, String firstName, String lastName, int age, float salary, String deliveryArea) {
-        super(id, firstName, lastName, age, salary); // Super Class Constructor
-        this.deliveryArea = deliveryArea; // New Attribute
+        super(id, firstName, lastName, age, salary);
+        this.deliveryArea = deliveryArea;
+        this.economicIncentive = 0; // Inicialmente sin incentivo adicional
     }
 
-    // Getter And Setter (For New Attribute)
+    // Getters y Setters
     public String getDeliveryArea() {
         return deliveryArea;
     }
+
     public void setDeliveryArea(String deliveryArea) {
         this.deliveryArea = deliveryArea;
     }
 
-    // "New" To-String Function
+    public float getEconomicIncentive() {
+        return economicIncentive;
+    }
+
+    public void setEconomicIncentive(float economicIncentive) {
+        this.economicIncentive = economicIncentive;
+    }
+
+    // Sobrescribir el método para calcular el salario neto con la deducción correspondiente
+    @Override
+    public float calculateNetSalary() {
+        return getSalary() - (getSalary() * 0.10f) + economicIncentive; // Deducción del 10% y agregar incentivo
+    }
+
     @Override
     public String toString() {
         return "DeliveryWorker{" +
-                "deliveryArea='" + deliveryArea + '\'' +
-                ", " + super.toString() + // Include properties from the Worker class
+                "id='" + getId() + '\'' +
+                ", firstName='" + getFirstName() + '\'' +
+                ", lastName='" + getLastName() + '\'' +
+                ", age=" + getAge() +
+                ", salary=" + getSalary() +
+                ", deliveryArea='" + deliveryArea + '\'' +
+                ", economicIncentive=" + economicIncentive +
+                ", incentivo=" + INCENTIVO +
                 '}';
-    }
-
-    public float calculateSalary() {
-        return getSalary() - (getSalary() * 0.10F);
     }
 }

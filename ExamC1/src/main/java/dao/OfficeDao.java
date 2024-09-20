@@ -12,7 +12,7 @@ public class OfficeDao implements Exam {
     @Override
     public boolean store(Object object) {
         OfficeWorker officeWorker = (OfficeWorker) object;
-        try{
+        try {
             listOffice.add(officeWorker);
             return true;
         } catch (Exception e) {
@@ -21,33 +21,36 @@ public class OfficeDao implements Exam {
     }
 
     @Override
-    public void findByID(String id) {
+    public OfficeWorker findByID(String id) {
         try {
             for (OfficeWorker officeWorker : listOffice) {
                 if (officeWorker.getId().equals(id)) {
-                    System.out.println(officeWorker.toString());
-                    break;
+                    return officeWorker; // Devolver el trabajador encontrado
                 }
-                System.out.println("Couldn't find office worker with id: " + id);
             }
+            System.out.println("Couldn't find office worker with id: " + id); // Mensaje si no se encontró
         } catch (Exception e) {
-            System.out.println("Error Trying to find office worker with id: " + id);
+            System.out.println("Error Trying to find office worker with id: " + id + "\nError: " + e.getMessage());
         }
+        return null; // Devolver null si no se encuentra
     }
 
     @Override
     public void findByName(String name) {
         try {
+            boolean found = false; // Variable para controlar si se encuentra el trabajador
             for (OfficeWorker officeWorker : listOffice) {
                 if (officeWorker.getFirstName().equals(name)) {
                     System.out.println(officeWorker.toString());
+                    found = true; // Se encontró el trabajador
                     break;
                 }
-                System.out.println("Couldn't find office worker with name: " + name);
+            }
+            if (!found) {
+                System.out.println("Couldn't find office worker with name: " + name); // Mensaje si no se encontró
             }
         } catch (Exception e) {
-            System.out.println("Error Trying to find office worker with name: " + name);
+            System.out.println("Error Trying to find office worker with name: " + name + "\nError: " + e.getMessage());
         }
-
     }
 }

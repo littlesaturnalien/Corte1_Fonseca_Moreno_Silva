@@ -3,35 +3,36 @@ package models;
 public class CommercialWorker extends Worker {
     private double commission;
 
-    // Constructors
-    public CommercialWorker() {
-        super();
-    }
-
     public CommercialWorker(String id, String firstName, String lastName, int age, float salary, double commission) {
-        super(id, firstName, lastName, age, salary); // Super Class Constructor
-        this.commission = commission; // New Attribute
+        super(id, firstName, lastName, age, salary);
+        this.commission = commission;
     }
 
-    // Getter And Setter (For New Attribute)
+    // Getters y Setters
     public double getCommission() {
         return commission;
     }
+
     public void setCommission(double commission) {
         this.commission = commission;
     }
 
-    // "New" To-String Function
+    // Sobrescribir el método para calcular el salario neto con la deducción correspondiente
+    @Override
+    public float calculateNetSalary() {
+        return getSalary() - (getSalary() * 0.07f); // Deducción del 7% para trabajadores comerciales
+    }
+
     @Override
     public String toString() {
         return "CommercialWorker{" +
-                "commission='" + commission + '\'' +
-                ", " + super.toString() + // Include properties from the Worker class
+                "id='" + getId() + '\'' +
+                ", firstName='" + getFirstName() + '\'' +
+                ", lastName='" + getLastName() + '\'' +
+                ", age=" + getAge() +
+                ", salary=" + getSalary() +
+                ", commission=" + commission +
+                ", incentivo=" + INCENTIVO +
                 '}';
     }
-
-    public float calculateNetSalary(){
-        return getSalary() - (getSalary() * 0.07F);
-    }
-
 }

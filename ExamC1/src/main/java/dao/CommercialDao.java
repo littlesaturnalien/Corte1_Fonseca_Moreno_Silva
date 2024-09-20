@@ -16,37 +16,42 @@ public class CommercialDao implements Exam {
             listCommercial.add(commercialWorker);
             return true;
         } catch (Exception e) {
+            System.out.println("Error storing commercial worker: " + e.getMessage());
             return false;
         }
     }
 
     @Override
-    public void findByID(String id) {
+    public CommercialWorker findByID(String id) {
         try {
             for (CommercialWorker commercialWorker : listCommercial) {
                 if (commercialWorker.getId().equals(id)) {
-                    System.out.println(commercialWorker.toString());
-                    break;
+                    return commercialWorker; // Devolver el trabajador encontrado
                 }
-                System.out.println("Couldn't find commercial worker with id: " + id);
             }
+            System.out.println("Couldn't find commercial worker with id: " + id);
         } catch (Exception e) {
-            System.out.println("Error Trying to find commercial worker with id: " + id + "\nError: " + e.getMessage());
+            System.out.println("Error trying to find commercial worker with id: " + id + "\nError: " + e.getMessage());
         }
+        return null;
     }
 
     @Override
     public void findByName(String name) {
         try {
+            boolean found = false;
             for (CommercialWorker commercialWorker : listCommercial) {
-                if (commercialWorker.getFirstName().equals(name)) {
+                if (commercialWorker.getFirstName().equalsIgnoreCase(name)) {
                     System.out.println(commercialWorker.toString());
+                    found = true;
                     break;
                 }
+            }
+            if (!found) {
                 System.out.println("Couldn't find commercial worker with name: " + name);
             }
         } catch (Exception e) {
-            System.out.println("Error Trying to find commercial worker with name: " + name + "\nError: " + e.getMessage());
+            System.out.println("Error trying to find commercial worker with name: " + name + "\nError: " + e.getMessage());
         }
     }
 }
