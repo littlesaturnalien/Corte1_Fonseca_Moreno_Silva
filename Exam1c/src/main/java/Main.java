@@ -94,13 +94,50 @@ public class Main {
                     break;
 
                 case 2:
-
+                    System.out.println("Add the type of worker");
+                    String menu3 = "1. Office Worker\n2. Delivery Worker\n3. Commercial Worker\n ---> ";
+                    System.out.println(menu3);
+                    int choice2 = scanner.nextInt();
+                    switch (choice2) {
+                        case 1:
+                            System.out.println("Enter ID of Office Worker: ");
+                            officeDao.findByID(scanner.next());
+                            break;
+                        case 2:
+                            System.out.println("Enter ID of Delivery Worker: ");
+                            deliveryDao.findByID(scanner.next());
+                            break;
+                        case 3:
+                            System.out.println("Enter ID of Commercial Worker: ");
+                            comDao.findByID(scanner.next());
+                            break;
+                    }
                     break;
+
                 case 3:
-
+                    System.out.println("Add the type of worker");
+                    String menu4 = "1. Office Worker\n2. Delivery Worker\n3. Commercial Worker\n ---> ";
+                    System.out.println(menu4);
+                    int choice3 = scanner.nextInt();
+                    switch (choice3) {
+                        case 1:
+                            System.out.println("Enter name of Office Worker: ");
+                            officeDao.findByName(scanner.next());
+                            break;
+                        case 2:
+                            System.out.println("Enter name of Delivery Worker: ");
+                            deliveryDao.findByName(scanner.next());
+                            break;
+                        case 3:
+                            System.out.println("Enter name of Commercial Worker: ");
+                            comDao.findByName(scanner.next());
+                            break;
+                    }
                     break;
+
                 case 4:
                     break;
+
                 case 5:
                     System.out.println("Terminating the program...");
                     break;
