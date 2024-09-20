@@ -24,11 +24,11 @@ public class Main {
                 case 1:
                     System.out.println("Add the type of worker");
                     String menu2 = "1. Office Worker\n2. Delivery Worker\n3. Commercial Worker\n ---> ";
-                    int worker = scanner.nextInt();
                     String id, name, surname;
                     int age;
                     float salary;
                     System.out.println(menu);
+                    int worker = scanner.nextInt();
                     switch (worker) {
                         case 1:
                             System.out.println("Enter their name: ");
@@ -94,7 +94,7 @@ public class Main {
                     break;
 
                 case 2:
-                        
+
                     break;
                 case 3:
 
