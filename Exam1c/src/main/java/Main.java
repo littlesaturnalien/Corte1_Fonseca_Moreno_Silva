@@ -136,6 +136,18 @@ public class Main {
                     break;
 
                 case 4:
+                    System.out.println("Add the type of worker");
+                    String menu5 = "1. Office Worker\n2. Delivery Worker\n3. Commercial Worker\n ---> ";
+                    System.out.println(menu5);
+                    int choice4 = scanner.nextInt();
+                    switch (choice4) {
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                    }
                     break;
 
                 case 5:
