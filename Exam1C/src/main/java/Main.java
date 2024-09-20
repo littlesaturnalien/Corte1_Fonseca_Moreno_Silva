@@ -1,25 +1,14 @@
-package main;
-
-import dao.WorkerDAO;
-import models.SalesWorker;
+import models.CommercialWorker;
 import models.DeliveryWorker;
 
 public class Main {
-    public static void main(String[] args) {
-        WorkerDAO workerDAO = new WorkerDAO();
 
-        // Agregar trabajadores
-        workerDAO.addWorker(new SalesWorker("123", "Juan", "Perez", 35, 1000, 400));
-        workerDAO.addWorker(new DeliveryWorker("456", "Carlos", "Lopez", 22, 800, "Central"));
-        workerDAO.addWorker(new DeliveryWorker("789", "Maria", "Garcia", 30, 1200, "North"));
-
-        // Buscar trabajador por ID
-        System.out.println("Buscar Worker con ID 123:");
-        System.out.println(workerDAO.findWorkerById("123"));
-
-        // Mostrar todos los trabajadores
-        System.out.println("\nLista de todos los trabajadores:");
-        workerDAO.displayWorkers();
+    public static void main(String[] args){
+//        DeliveryWorker deliveryWorker = new DeliveryWorker("1321", "Cesar", "Silva", 19, 1000, "Casita");
+//        System.out.println(deliveryWorker.toString());
+//
+//        CommercialWorker commercialWorker = new CommercialWorker("3150", "Karen", "Fonseca", 20, 65461, 100);
+//        System.out.println(commercialWorker.toString());
     }
-}
 
+}
