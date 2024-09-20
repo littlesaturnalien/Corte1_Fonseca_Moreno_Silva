@@ -32,4 +32,7 @@ public class DeliveryWorker extends Worker {
                 '}';
     }
 
+    public float calculateSalary() {
+        return getSalary() - (getSalary() * 0.10F);
+    }
 }

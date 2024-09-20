@@ -30,4 +30,8 @@ public class OfficeWorker extends Worker {
                 '}';
     }
 
+    public float calculateNetSalary() {
+        return getSalary() - (getSalary() * 0.07F);
+    }
+
 }

@@ -30,4 +30,8 @@ public class CommercialWorker extends Worker {
                 '}';
     }
 
+    public float calculateNetSalary(){
+        return getSalary() - (getSalary() * 0.07F);
+    }
+
 }

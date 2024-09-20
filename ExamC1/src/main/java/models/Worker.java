@@ -55,7 +55,9 @@ public class Worker {
     public int getEconomicIncentive() {
         return economicIncentive;
     }
-    // There is no setEconomicIncentive because it's a constant :P
+    public void setEconomicIncentive(int economicIncentive) {
+        this.economicIncentive = economicIncentive;
+    }
 
     // Equals-To Function
     @Override
