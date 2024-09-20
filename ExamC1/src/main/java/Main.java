@@ -1,14 +1,28 @@
+import dao.CommercialDao;
+import dao.DeliveryDao;
+import dao.OfficeDao;
+
 import models.CommercialWorker;
 import models.DeliveryWorker;
+import models.OfficeWorker;
+
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args){
-//        DeliveryWorker deliveryWorker = new DeliveryWorker("1321", "Cesar", "Silva", 19, 1000, "Casita");
-//        System.out.println(deliveryWorker.toString());
-//
-//        CommercialWorker commercialWorker = new CommercialWorker("3150", "Karen", "Fonseca", 20, 65461, 100);
-//        System.out.println(commercialWorker.toString());
-    }
 
+        Scanner scanner = new Scanner(System.in);
+
+        CommercialDao comDao = new CommercialDao();
+        DeliveryDao deliveryDao = new DeliveryDao();
+        OfficeDao officeDao = new OfficeDao();
+
+        String menu = "1. Add New Worker\n2. Search Worker by ID\n3. Search Worker by First Name\n4. Exit";
+
+        System.out.println(menu);
+
+
+
+    }
 }
