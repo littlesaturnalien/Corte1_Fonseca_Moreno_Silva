@@ -100,6 +100,8 @@ public class Main {
 
                     break;
                 case 4:
+                    break;
+                case 5:
                     System.out.println("Terminating the program...");
                     break;
                 default:
