@@ -27,7 +27,7 @@ public class Main {
                     String id, name, surname;
                     int age;
                     float salary;
-                    System.out.println(menu);
+                    System.out.println(menu2);
                     int worker = scanner.nextInt();
                     switch (worker) {
                         case 1:
